@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A vue component for pagefilp using BookBlock",
   "author": "叫我布鲁斯 <bruceczk@foxmail.com>",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "browser-sync start -s . -f 'index.html' '*.js'"
   },
