@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue-BookBlock</title>
+  <link rel="stylesheet" href="./styles/bookblock.css">
+  <style>
+    .bb-bookblock {
+      /* A5 */
+      width: 1120px;
+      height: 798px;
+    }
+
+    .page {
+      width: 50%;
+      float: left;
+      height: 100%;
+      padding: 5%;
+      box-sizing: border-box;
+      border: 1px solid #eee;
+    }
+    .page + .page {
+      border-left: 0;
+    }
+
+    nav {
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+<app>
+  <div class="bb-bookblock" v-bookBlock="options" ref="bookBlock">
+    <div class="bb-item">
+      <div class="page">
+        <h1>Page 1</h1>
+        <p>Lorem ipsum dolor sit amet, utinam audiam forensibus vim no, mel solum graecis recusabo ei. Et viris placerat qui, ad quodsi eleifend constituam eam. Ex iusto partiendo gubergren per, quis assentior dissentias cum ad, te eruditi utroque dissentiunt qui. Ad vix debet mucius iriure. Cu soleat facilis vim, sit nullam delenit ne. Sea simul aliquam in, has augue soleat at.</p>
+      </div>
+      <div class="page">
+        <h1>Page 2</h1>
+        <p>Vis mollis consulatu et, has in facilisis posidonium. Minim choro ea quo, iisque feugait consectetuer at mei. Ne ius omnium maiestatis, et augue indoctum elaboraret cum. Ad his mutat munere, choro saperet no quo. Duo ne adolescens consequuntur, etiam essent patrioque te ius, legendos inimicus mea ex. Qui cu lorem comprehensam, cu nominati sententiae definitionem eos.</p>
+      </div>
+    </div>
+    <div class="bb-item">
+      <div class="page">
+        <h1>Page 3</h1>
+        <p>Lorem ipsum dolor sit amet, utinam audiam forensibus vim no, mel solum graecis recusabo ei. Et viris placerat qui, ad quodsi eleifend constituam eam. Ex iusto partiendo gubergren per, quis assentior dissentias cum ad, te eruditi utroque dissentiunt qui. Ad vix debet mucius iriure. Cu soleat facilis vim, sit nullam delenit ne. Sea simul aliquam in, has augue soleat at.</p>
+      </div>
+      <div class="page">
+        <h1>Page 4</h1>
+        <p>Vis mollis consulatu et, has in facilisis posidonium. Minim choro ea quo, iisque feugait consectetuer at mei. Ne ius omnium maiestatis, et augue indoctum elaboraret cum. Ad his mutat munere, choro saperet no quo. Duo ne adolescens consequuntur, etiam essent patrioque te ius, legendos inimicus mea ex. Qui cu lorem comprehensam, cu nominati sententiae definitionem eos.</p>
+      </div>
+    </div>
+    <div class="bb-item">
+      <div class="page">
+        <h1>Page 5</h1>
+        <p>Lorem ipsum dolor sit amet, utinam audiam forensibus vim no, mel solum graecis recusabo ei. Et viris placerat qui, ad quodsi eleifend constituam eam. Ex iusto partiendo gubergren per, quis assentior dissentias cum ad, te eruditi utroque dissentiunt qui. Ad vix debet mucius iriure. Cu soleat facilis vim, sit nullam delenit ne. Sea simul aliquam in, has augue soleat at.</p>
+      </div>
+      <div class="page">
+        <h1>Page 6</h1>
+        <p>Vis mollis consulatu et, has in facilisis posidonium. Minim choro ea quo, iisque feugait consectetuer at mei. Ne ius omnium maiestatis, et augue indoctum elaboraret cum. Ad his mutat munere, choro saperet no quo. Duo ne adolescens consequuntur, etiam essent patrioque te ius, legendos inimicus mea ex. Qui cu lorem comprehensam, cu nominati sententiae definitionem eos.</p>
+      </div>
+    </div>
+  </div>
+  <nav style="text-align: center;">
+    <a id="bb-nav-first" href="javascript:" @click="bookblock.first()">First page</a>
+    <a id="bb-nav-prev" href="javascript:" @click="bookblock.prev()">Previous</a>
+    <a id="bb-nav-next" href="javascript:" @click="bookblock.next()">Next</a>
+    <a id="bb-nav-last" href="javascript:" @click="bookblock.last()">Last page</a>
+  </nav>
+</app>
+
+<script src="https://unpkg.com/vue@2.2.2/dist/vue.min.js"></script>
+<script src="./bookblock.js"></script>
+<script src="./vue-bookblock.js"></script>
+
+<script>
+  new Vue({
+    el: 'app',
+    data: function () {
+      return {
+        options: {
+          speed: 600
+        }
+      }
+    },
+    computed: {
+      bookblock: function () {
+        return this.$refs.bookBlock.bookblock
+      }
+    }
+  })
+</script>
+</body>
+</html>

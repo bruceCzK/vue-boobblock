@@ -1,0 +1,17 @@
+{
+  "name": "vue-bookblock",
+  "version": "1.0.0",
+  "description": "A vue component for pagefilp using BookBlock",
+  "author": "叫我布鲁斯 <bruceczk@foxmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "browser-sync start -s . -f 'index.html' '*.js'"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}
