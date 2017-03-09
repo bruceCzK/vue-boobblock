@@ -2,6 +2,8 @@
 
 > A lightweight directive for booklet-like component using codrops/BookBlock
 
+[Live Demo](https://bruceczk.github.io/vue-boobblock/)
+
 ## Installation
 NPM
 ```
