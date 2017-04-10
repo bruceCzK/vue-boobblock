@@ -59,6 +59,9 @@ Vue.use(BookBlock)
   // autoplay. If true it overwrites the circular option to true
   autoplay: false,
 
+  // hasCover. If true the first item will become cover and be centered
+  hasCover: true,
+
   // page selector using upon initialize
   itemSelector: '.bb-item',
 
