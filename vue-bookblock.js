@@ -19,9 +19,9 @@
     })
   };
 
-  if (typeof exports == 'object') {
+  if (typeof exports === 'object') {
     module.exports = vBookBlock
-  } else if (typeof define == 'function' && define.amd) {
+  } else if (typeof define === 'function' && define.amd) {
     define([], function () {
       return vBookBlock
     })

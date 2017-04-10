@@ -1,7 +1,4 @@
 /**
- * Created by chenzhuokai on 2017/3/9.
- */
-/**
  * bookblock.js v2.0.1
  * http://www.codrops.com
  *
@@ -85,7 +82,6 @@
       prevEl: '',
       // autoplay. If true it overwrites the circular option to true
       autoplay: false,
-      itemSelector: '.bb-item',
       // time (ms) between page switch, if autoplay is true
       interval: 3000,
       // 3d perspective
@@ -101,7 +97,11 @@
       // page is the current item´s index
       onBeforeFlip: function (page) {
         return false;
-      }
+      },
+
+      // Add by BruceCzK
+      itemSelector: '.bb-item',
+      hasCover: true
     },
     _init: function () {
       // orientation class
@@ -125,6 +125,11 @@
       // get width of this.el
       // this will be necessary to create the flipping layout
       this.elWidth = this.el.offsetWidth;
+
+      if (this.options.hasCover && this.currentIdx === 0) {
+        this.el.style.transform = 'translateX(-25%)';
+      }
+
       var transEndEventNames = {
         'WebkitTransition': 'webkitTransitionEnd',
         'MozTransition': 'transitionend',
@@ -260,6 +265,15 @@
 
       s_middle.style.transitionDuration = speed + 'ms';
       s_middle.style.transitionTimingFunction = this.options.easing;
+
+      if (this.options.hasCover) {
+        this.el.style.transitionDuration = speed / 2 + 'ms';
+        if (self.currentIdx === 0) {
+          self.el.style.transform = 'translateX(-25%)';
+        } else {
+          self.el.style.transform = 'translateX(0)';
+        }
+      }
 
       s_middle.addEventListener(this.transEndEventName, function (event) {
         if ((" " + event.target.className + " ").replace(/[\n\t]/g, " ").indexOf(" bb-page ") > -1) {
