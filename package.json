@@ -5,6 +5,7 @@
   "author": "叫我布鲁斯 <bruceczk@foxmail.com>",
   "repository": "https://github.com/bruceCzK/vue-boobblock",
   "license": "MIT",
+  "main": "vue-bookblock.js",
   "scripts": {
     "dev": "browser-sync start -s . -f 'index.html' '*.js'"
   },
